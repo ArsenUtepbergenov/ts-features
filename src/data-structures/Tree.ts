@@ -1,3 +1,6 @@
+/**
+ * The tree type
+ */
 class Tree {
 }
 
