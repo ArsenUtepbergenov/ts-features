@@ -1,18 +1,59 @@
-// import { shakerSort } from './algorithms/sorts/shaker-sort'
-// import { insertionSort } from './algorithms/sorts/insertion-sort'
-// import { shellSort } from './algorithms/sorts/shell-sort'
-import { quickSort } from './algorithms/sorts/quick-sort'
+// import { BinaryTree } from "./data-structures"
 
-// test array
-const unsortedArrayInt = [2, 33, 4, -1, 3, -21, 99, 54, 66, 4, -4]
-// const unsortedArrayFloat = [9.54, 3.3, -7.66, 34.92, -4.2, -1.1]
-// const unsortedArrayString = ['f', 'ar', 'a', 'o', 's', 'wa']
+class TreeNode {
+  val: number
+  left: TreeNode | null
+  right: TreeNode | null
+  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+    this.val = val === undefined ? 0 : val
+    this.left = left === undefined ? null : left
+    this.right = right === undefined ? null : right
+  }
+}
+
+export const areArraysEqual = <Type>(
+  arrayOne: Type[],
+  arrayTwo: Type[]
+): boolean => {
+  return (
+    Array.isArray(arrayOne) &&
+    Array.isArray(arrayTwo) &&
+    arrayOne.length === arrayTwo.length &&
+    arrayOne.every((val, index) => val === arrayTwo[index])
+  )
+}
 
 function main() {
-  // console.log(shakerSort(unsortedArrayFloat))
-  // console.log(insertionSort(unsortedArrayString))
-  // console.log(shellSort(unsortedArrayInt))
-  console.log(quickSort(unsortedArrayInt))
+  const p = new TreeNode(1)
+  p.left = new TreeNode(2)
+
+  console.log(p)
+
+  const q = new TreeNode(1)
+  q.right = new TreeNode(2)
+
+  console.log(q)
+
+  function inOrderTraverse(node: TreeNode | null, result: number[]): void {
+    if (node !== null) {
+      inOrderTraverse(node.left, result)
+      result.push(node.val)
+      console.log(node)
+      inOrderTraverse(node.right, result)
+    }
+  }
+
+  function isSameTree(p: TreeNode | null = null, q: TreeNode | null) {
+    // const result1: number[] = []
+    const result2: number[] = []
+    // inOrderTraverse(p, result1)
+    inOrderTraverse(q, result2)
+    // console.log(result1)
+    console.log(result2)
+    // return areArraysEqual(result1, result2)
+  }
+
+  console.log(isSameTree(p, q))
 }
 
 main()
