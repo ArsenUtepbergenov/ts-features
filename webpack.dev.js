@@ -27,17 +27,10 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   devServer: {
-    stats: 'errors-only',
-    clientLogLevel: 'warning',
-    host: 'localhost',
-    port: 3030,
-    hot: true,
-    contentBase: false,
-    compress: true,
-    inline: true,
-    progress: true,
+    port: 3000,
     open: true,
-    overlay: true
+    compress: true,
+    historyApiFallback: true
   },
   output: {
     path: path.resolve(__dirname, './dist'),
