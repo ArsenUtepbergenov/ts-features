@@ -37,7 +37,6 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new HtmlWebpackPlugin({ title: 'Ts' }),
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({ title: 'Ts' })
   ]
 }
