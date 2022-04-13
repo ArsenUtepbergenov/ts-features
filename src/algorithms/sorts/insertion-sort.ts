@@ -1,6 +1,5 @@
 export function insertionSort<Type>(array: Type[]) {
-  if (!array.length)
-    return array
+  if (!array.length) return array
 
   const sortedArray: Type[] = []
 
@@ -8,7 +7,10 @@ export function insertionSort<Type>(array: Type[]) {
     let k = i
     sortedArray.push(array[i])
     while (k > 0 && sortedArray[k] < sortedArray[k - 1]) {
-      [sortedArray[k], sortedArray[k - 1]] = [sortedArray[k - 1], sortedArray[k]]
+      ;[sortedArray[k], sortedArray[k - 1]] = [
+        sortedArray[k - 1],
+        sortedArray[k],
+      ]
       k--
     }
   }

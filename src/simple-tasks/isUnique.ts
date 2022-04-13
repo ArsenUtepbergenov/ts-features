@@ -1,4 +1,4 @@
-function isUnique(str: string = ''): boolean {
+function isUnique(str = ''): boolean {
   // const length = str.length
 
   // 1:

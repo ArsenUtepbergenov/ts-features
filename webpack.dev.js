@@ -17,26 +17,24 @@ module.exports = {
               transpileOnly: false,
               experimentalWatchApi: true,
             },
-          }
+          },
         ],
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     port: 3000,
     open: true,
     compress: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
-  plugins: [
-    new HtmlWebpackPlugin({ title: 'Ts' })
-  ]
+  plugins: [new HtmlWebpackPlugin({ title: 'Ts' })],
 }

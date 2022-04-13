@@ -19,10 +19,14 @@ class LinkNode<Type> {
 class LinkedList<Type> {
   private _head: Pointer<Type> = null
   private _tail: Pointer<Type> = null
-  private _size: number = 0
+  private _size = 0
   // getters
-  get size(): number { return this._size }
-  get isEmpty(): boolean { return !this.size }
+  get size(): number {
+    return this._size
+  }
+  get isEmpty(): boolean {
+    return !this.size
+  }
   get front(): Type {
     if (this.isEmpty) throw new Error('The list is empty')
     return this._head.value
@@ -55,11 +59,18 @@ class LinkedList<Type> {
     this._size++
   }
   public insert(index: number, value: Type): void {
-    if (index === 0) { this.push_front(value); return }
-    if (index === this.size - 1) { this.push_back(value); return }
-    if (index < 0 || index >= this.size) throw new Error('The index is out of range')
+    if (index === 0) {
+      this.push_front(value)
+      return
+    }
+    if (index === this.size - 1) {
+      this.push_back(value)
+      return
+    }
+    if (index < 0 || index >= this.size)
+      throw new Error('The index is out of range')
     let current = this._head
-    for (let j = 0; j = index - 1; j++) {
+    for (let j = 0; (j = index - 1); j++) {
       current = current.next!
     }
     const node = new LinkNode(value)
@@ -99,13 +110,20 @@ class LinkedList<Type> {
     return value
   }
   public erase(index: number): Type {
-    if (index === 0) { this.pop_front(); return }
-    if (index === this.size - 1) { this.pop_back(); return }
-    if (index < 0 || index >= this.size) throw new Error('The index is out of range')
+    if (index === 0) {
+      this.pop_front()
+      return
+    }
+    if (index === this.size - 1) {
+      this.pop_back()
+      return
+    }
+    if (index < 0 || index >= this.size)
+      throw new Error('The index is out of range')
     let j = 0
     let current = this._head
     while (j < index) {
-      current = current.next!
+      current = current.next
       j++
     }
     current.next.prev = current.prev
@@ -132,6 +150,5 @@ class LinkedList<Type> {
     return index !== -1
   }
 }
-
 
 export default LinkedList

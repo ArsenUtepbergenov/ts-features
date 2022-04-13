@@ -18,5 +18,5 @@ export {
   areAnagrams,
   search,
   binarySearch,
-  areBracketsBalanced
+  areBracketsBalanced,
 }

@@ -18,8 +18,8 @@ class BinaryTree<Type> {
 
   public maxDepth(node: Pointer<Type> = this._root): number {
     if (node === null) return 0
-    let leftDepth = this.maxDepth(node.left)
-    let rightDepth = this.maxDepth(node.right)
+    const leftDepth = this.maxDepth(node.left)
+    const rightDepth = this.maxDepth(node.right)
 
     return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1
   }
@@ -31,7 +31,7 @@ class BinaryTree<Type> {
     let level = 0
 
     while (queue.length > 0) {
-      let length = queue.length
+      const length = queue.length
 
       for (let i = 0; i < length; i++) {
         const temp = queue.shift()
@@ -70,7 +70,7 @@ class BinaryTree<Type> {
 
   public inOrderTraverse(
     node: Pointer<Type> = this._root,
-    handler?: Handler<Type>
+    handler?: Handler<Type>,
   ): void {
     if (node !== null) {
       this.inOrderTraverse(node.left, handler)
@@ -81,7 +81,7 @@ class BinaryTree<Type> {
 
   public preOrderTraverse(
     node: Pointer<Type> = this._root,
-    handler?: Handler<Type>
+    handler?: Handler<Type>,
   ): void {
     if (node !== null) {
       handler && handler(node.data)
@@ -92,7 +92,7 @@ class BinaryTree<Type> {
 
   public postOrderTraverse(
     node: Pointer<Type> = this._root,
-    handler?: Handler<Type>
+    handler?: Handler<Type>,
   ): void {
     if (node !== null) {
       this.postOrderTraverse(node.left, handler)

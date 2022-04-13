@@ -11,8 +11,7 @@ function areBracketsBalanced(str: string): boolean {
   const queue = []
 
   for (const symbol of str) {
-    if (begin.includes(symbol))
-      queue.push(symbol)
+    if (begin.includes(symbol)) queue.push(symbol)
     else if (end.includes(symbol)) {
       const last = queue.pop()
       if (brackets[symbol] !== last) return false

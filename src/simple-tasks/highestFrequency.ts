@@ -4,11 +4,9 @@ function highestFrequency(array: string[]): string {
   const temp = {}
 
   for (const str of array) {
-    if (temp[str])
-      temp[str]++
-    else
-      temp[str] = 1
-      
+    if (temp[str]) temp[str]++
+    else temp[str] = 1
+
     if (temp[str] > maxFrequency) {
       maxFrequency = temp[str]
       result = str
