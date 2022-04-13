@@ -5,6 +5,8 @@ import highestFrequency from './highestFrequency'
 import isStringRotated from './isStringRotated'
 import isSubarray from './isSubarray'
 import areAnagrams from './areAnagrams'
+import { search, binarySearch } from './search'
+import areBracketsBalanced from './areBracketsBalanced'
 
 export {
   isUnique,
@@ -13,5 +15,8 @@ export {
   highestFrequency,
   isStringRotated,
   isSubarray,
-  areAnagrams
+  areAnagrams,
+  search,
+  binarySearch,
+  areBracketsBalanced
 }
