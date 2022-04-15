@@ -7,6 +7,10 @@ import isSubarray from './isSubarray'
 import areAnagrams from './areAnagrams'
 import { search, binarySearch } from './search'
 import areBracketsBalanced from './areBracketsBalanced'
+import deepEqual from './deepEqual'
+import bind from './bind'
+import add from './add'
+import groupBy from './groupBy'
 
 export {
   isUnique,
@@ -19,4 +23,8 @@ export {
   search,
   binarySearch,
   areBracketsBalanced,
+  deepEqual,
+  bind,
+  add,
+  groupBy,
 }
