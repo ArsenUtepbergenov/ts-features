@@ -1,8 +1,4 @@
-export function quickSort<Type>(
-  array: Type[],
-  begin = 0,
-  end: number = array.length - 1,
-) {
+export function quickSort<Type>(array: Type[], begin = 0, end: number = array.length - 1) {
   if (array.length < 2 || end < begin) return array
 
   const pivot = partition(array, begin, end)

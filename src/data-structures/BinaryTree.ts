@@ -14,8 +14,6 @@ class TreeNode<Type> {
 class BinaryTree<Type> {
   private _root: Pointer<Type> = null
 
-  public constructor() {}
-
   public maxDepth(node: Pointer<Type> = this._root): number {
     if (node === null) return 0
     const leftDepth = this.maxDepth(node.left)
@@ -68,10 +66,7 @@ class BinaryTree<Type> {
     return node.right === null ? node : this.maxNode(node.right)
   }
 
-  public inOrderTraverse(
-    node: Pointer<Type> = this._root,
-    handler?: Handler<Type>,
-  ): void {
+  public inOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
     if (node !== null) {
       this.inOrderTraverse(node.left, handler)
       handler && handler(node.data)
@@ -79,10 +74,7 @@ class BinaryTree<Type> {
     }
   }
 
-  public preOrderTraverse(
-    node: Pointer<Type> = this._root,
-    handler?: Handler<Type>,
-  ): void {
+  public preOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
     if (node !== null) {
       handler && handler(node.data)
       this.preOrderTraverse(node.left, handler)
@@ -90,10 +82,7 @@ class BinaryTree<Type> {
     }
   }
 
-  public postOrderTraverse(
-    node: Pointer<Type> = this._root,
-    handler?: Handler<Type>,
-  ): void {
+  public postOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
     if (node !== null) {
       this.postOrderTraverse(node.left, handler)
       this.postOrderTraverse(node.right, handler)
@@ -104,9 +93,7 @@ class BinaryTree<Type> {
   public insert(data: Type): void {
     const node = new TreeNode(data)
 
-    this._root === null
-      ? (this._root = node)
-      : this._insertNode(this._root, node)
+    this._root === null ? (this._root = node) : this._insertNode(this._root, node)
   }
 
   public remove(data: Type): void {
@@ -150,13 +137,9 @@ class BinaryTree<Type> {
 
   private _insertNode(node: TreeNode<Type>, newNode: TreeNode<Type>): void {
     if (node.data > newNode.data) {
-      node.left === null
-        ? (node.left = newNode)
-        : this._insertNode(node.left, newNode)
+      node.left === null ? (node.left = newNode) : this._insertNode(node.left, newNode)
     } else {
-      node.right === null
-        ? (node.right = newNode)
-        : this._insertNode(node.right, newNode)
+      node.right === null ? (node.right = newNode) : this._insertNode(node.right, newNode)
     }
   }
 }

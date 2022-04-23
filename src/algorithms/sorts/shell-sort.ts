@@ -1,11 +1,7 @@
 export function shellSort<Type>(array: Type[]) {
   if (!array.length) return array
 
-  for (
-    let step = Math.floor(array.length / 2);
-    step > 0;
-    step = Math.floor(step / 2)
-  ) {
+  for (let step = Math.floor(array.length / 2); step > 0; step = Math.floor(step / 2)) {
     for (let pass = step; pass < array.length; pass++) {
       for (
         let replacement = pass - step;

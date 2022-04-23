@@ -67,8 +67,7 @@ class LinkedList<Type> {
       this.push_back(value)
       return
     }
-    if (index < 0 || index >= this.size)
-      throw new Error('The index is out of range')
+    if (index < 0 || index >= this.size) throw new Error('The index is out of range')
     let current = this._head
     for (let j = 0; (j = index - 1); j++) {
       current = current.next!
@@ -118,8 +117,7 @@ class LinkedList<Type> {
       this.pop_back()
       return
     }
-    if (index < 0 || index >= this.size)
-      throw new Error('The index is out of range')
+    if (index < 0 || index >= this.size) throw new Error('The index is out of range')
     let j = 0
     let current = this._head
     while (j < index) {
