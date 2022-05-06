@@ -1,4 +1,5 @@
-import { groupBy } from './simple-tasks'
+import { getArray, Int, Float, Char } from './data'
 
-console.log(groupBy([3.8, 5.4, 5.2, 3.1], Math.floor))
-console.log(groupBy(['one', 'two', 'three'], 'length'))
+console.log(getArray(10, Int))
+console.log(getArray(10, Float))
+console.log(getArray(10, Char))

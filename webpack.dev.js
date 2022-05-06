@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -27,8 +26,8 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
-    port: 3000,
-    open: true,
+    port: 3030,
+    open: false,
     compress: true,
     historyApiFallback: true,
   },

@@ -5,18 +5,16 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "env": {
     "es2022": true,
-    "browser": true
+    "browser": true,
+    "node": true
   },
   "rules": {
-    "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-    "no-debugger": 0
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "no-debugger": 0,
+    "@typescript-eslint/no-var-requires": 0
   }
 }
