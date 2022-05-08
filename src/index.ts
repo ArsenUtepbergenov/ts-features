@@ -1,5 +1,3 @@
-import { getArray, Int, Float, Char } from './data'
+import { getAdjacencyList } from './data/graph'
 
-console.log(getArray(10, Int))
-console.log(getArray(10, Float))
-console.log(getArray(10, Char))
+console.table(getAdjacencyList(5))

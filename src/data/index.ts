@@ -1,5 +1,5 @@
 /**
- * Generate an array by type.
+ * Generates an array by type.
  *
  * Default ranges: numeric - [-20, 20]; character - full english alphabet
  * @param size The size of an array [default = 0]
@@ -48,7 +48,7 @@ export abstract class Char extends DataArray<string> {
   }
 }
 
-function getRandomChar(): string {
+export function getRandomChar(): string {
   const uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   const all = uppers + uppers.toLowerCase()
 
@@ -57,11 +57,11 @@ function getRandomChar(): string {
   return all.charAt(index)
 }
 
-function getRandomFloat(min: number, max: number): number {
+export function getRandomFloat(min: number, max: number): number {
   return Number.parseFloat((Math.random() * (max - min + 1) + min).toFixed(2))
 }
 
-function getRandomInt(min: number, max: number): number {
+export function getRandomInt(min: number, max: number): number {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
