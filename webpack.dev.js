@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  devtool: 'eval-cheap-module-source-map',
   module: {
     rules: [
       {
@@ -29,7 +29,17 @@ module.exports = {
     port: 3030,
     open: false,
     compress: true,
+    magicHtml: true,
     historyApiFallback: true,
+    client: {
+      logging: 'info',
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+      progress: false,
+      reconnect: 3,
+    },
   },
   output: {
     path: path.resolve(__dirname, './dist'),

@@ -8,9 +8,9 @@ import { getRandomInt } from './'
  * v - the vertex, [a, b, c] - adjacency vertices
  */
 export function getAdjacencyList(numberNodes = 0): Record<number, number[]> {
-  const result = {}
+  const result: Record<number, Set<number>> = {}
 
-  if (numberNodes <= 0) return result
+  if (numberNodes <= 0) return {}
   const min = 0
   const max = numberNodes - 1
 
@@ -34,8 +34,14 @@ export function getAdjacencyList(numberNodes = 0): Record<number, number[]> {
     }
   }
 
-  for (const key in result) {
-    result[key] = Array.from(result[key]).sort()
+  return parseToArray(result)
+}
+
+function parseToArray(data: Record<number, Set<number>>): Record<number, number[]> {
+  const result: Record<number, number[]> = {}
+
+  for (const key in data) {
+    result[key] = Array.from(data[key]).sort()
   }
 
   return result
