@@ -4,11 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './src/index.ts',
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'eval',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: [
           {
             loader: 'ts-loader',
@@ -23,7 +23,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     port: 3030,

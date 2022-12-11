@@ -12,6 +12,6 @@ export function createStore(rootReducer, initialState) {
     },
     getState() {
       return state
-    }
+    },
   }
 }
