@@ -2,6 +2,6 @@
 
 Content:
 
-- libs (axillaries methods, ...)
+- libs (auxiliary methods, ...)
 - structures
 - solved simple tasks
