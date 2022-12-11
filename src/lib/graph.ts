@@ -1,4 +1,4 @@
-import { getRandomInt } from './'
+import { getRandomInt } from './random'
 
 /**
  * Generates a random undirected integer graph as an adjacency list

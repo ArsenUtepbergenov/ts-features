@@ -12,10 +12,6 @@ module.exports = {
         use: [
           {
             loader: 'ts-loader',
-            options: {
-              transpileOnly: false,
-              experimentalWatchApi: true,
-            },
           },
         ],
         exclude: /node_modules/,

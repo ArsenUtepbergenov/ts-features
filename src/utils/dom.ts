@@ -1,4 +1,4 @@
-export default class Utils {
+export default class Dom {
   public static container = document.createElement('div')
 
   public static printArray<Type>(array: Type[]) {
@@ -6,12 +6,12 @@ export default class Utils {
     for (const element of array) {
       item.innerHTML += `${element}, `
     }
-    Utils.container.appendChild(item)
+    Dom.container.appendChild(item)
   }
 
   public static print(element: HTMLElement) {
     const item = document.createElement('span')
     item.innerHTML = `${element}`
-    Utils.container.appendChild(item)
+    Dom.container.appendChild(item)
   }
 }

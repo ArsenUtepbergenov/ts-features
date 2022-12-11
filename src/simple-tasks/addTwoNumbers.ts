@@ -7,7 +7,10 @@ class ListNode {
   }
 }
 
-export default function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+export default function addTwoNumbers(
+  l1: ListNode | null,
+  l2: ListNode | null,
+): ListNode | null {
   const List = new ListNode(0)
   let head = List
   let sum = 0
