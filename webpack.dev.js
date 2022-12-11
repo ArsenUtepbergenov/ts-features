@@ -4,18 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  devtool: 'eval',
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: [
           {
             loader: 'ts-loader',
-            options: {
-              transpileOnly: false,
-              experimentalWatchApi: true,
-            },
           },
         ],
         exclude: /node_modules/,
@@ -23,13 +19,23 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js'],
   },
   devServer: {
     port: 3030,
     open: false,
     compress: true,
+    magicHtml: true,
     historyApiFallback: true,
+    client: {
+      logging: 'info',
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+      progress: false,
+      reconnect: 3,
+    },
   },
   output: {
     path: path.resolve(__dirname, './dist'),

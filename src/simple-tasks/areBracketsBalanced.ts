@@ -8,7 +8,7 @@ function areBracketsBalanced(str: string): boolean {
     ']': '[',
   }
 
-  const queue = []
+  const queue: string[] = []
 
   for (const symbol of str) {
     if (begin.includes(symbol)) queue.push(symbol)
