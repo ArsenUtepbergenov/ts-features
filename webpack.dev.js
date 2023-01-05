@@ -23,7 +23,7 @@ module.exports = {
   },
   devServer: {
     port: 3030,
-    open: false,
+    open: true,
     compress: true,
     magicHtml: true,
     historyApiFallback: true,
