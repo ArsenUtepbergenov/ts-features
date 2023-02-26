@@ -1,6 +1,6 @@
 {
   "name": "ts-features",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Testing some algorithms, data structures with TS",
   "main": "./src/index.ts",
   "scripts": {

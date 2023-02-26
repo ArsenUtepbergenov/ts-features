@@ -15,5 +15,6 @@ export function shellSort<Type>(array: Type[]) {
       }
     }
   }
+
   return array
 }

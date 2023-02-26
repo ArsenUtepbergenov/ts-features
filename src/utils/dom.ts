@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+
+const body = document.querySelector('body') as HTMLBodyElement
+
 export default class Dom {
   public static container = document.createElement('div')
 
@@ -14,8 +17,7 @@ export default class Dom {
     Dom.container.appendChild(item)
   }
 
-  public static printInBody(str?: string | number) {
-    const body = document.querySelector('body')!
+  public static printInBody(str: string | number) {
     body.innerHTML = `${str}`
   }
 }
