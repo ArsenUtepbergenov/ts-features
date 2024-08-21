@@ -66,7 +66,10 @@ class BinaryTree<Type> {
     return node.right === null ? node : this.maxNode(node.right)
   }
 
-  public inOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
+  public inOrderTraverse(
+    node: Pointer<Type> = this._root,
+    handler?: Handler<Type>,
+  ): void {
     if (node !== null) {
       this.inOrderTraverse(node.left, handler)
       handler && handler(node.data)
@@ -74,7 +77,10 @@ class BinaryTree<Type> {
     }
   }
 
-  public preOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
+  public preOrderTraverse(
+    node: Pointer<Type> = this._root,
+    handler?: Handler<Type>,
+  ): void {
     if (node !== null) {
       handler && handler(node.data)
       this.preOrderTraverse(node.left, handler)
@@ -82,7 +88,10 @@ class BinaryTree<Type> {
     }
   }
 
-  public postOrderTraverse(node: Pointer<Type> = this._root, handler?: Handler<Type>): void {
+  public postOrderTraverse(
+    node: Pointer<Type> = this._root,
+    handler?: Handler<Type>,
+  ): void {
     if (node !== null) {
       this.postOrderTraverse(node.left, handler)
       this.postOrderTraverse(node.right, handler)
@@ -139,7 +148,9 @@ class BinaryTree<Type> {
     if (node.data > newNode.data) {
       node.left === null ? (node.left = newNode) : this._insertNode(node.left, newNode)
     } else {
-      node.right === null ? (node.right = newNode) : this._insertNode(node.right, newNode)
+      node.right === null
+        ? (node.right = newNode)
+        : this._insertNode(node.right, newNode)
     }
   }
 }

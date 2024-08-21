@@ -3,7 +3,7 @@
  */
 type Pointer<Type> = LinkNode<Type> | null
 /**
- * The auxiliary node structure
+ * The auxiliary node for a linked list structure
  */
 class LinkNode<Type> {
   public next: Pointer<Type> = null
@@ -14,7 +14,7 @@ class LinkNode<Type> {
   }
 }
 /**
- * The Linked list type
+ * The Linked list structure type
  */
 class LinkedList<Type> {
   private _head: Pointer<Type> = null
