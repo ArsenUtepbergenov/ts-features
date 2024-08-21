@@ -1,8 +1,4 @@
-function groupBy<T, U extends keyof T>(
-  array: T[],
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  fn: U | Function,
-) {
+function groupBy<T, U extends keyof T>(array: T[], fn: U | Function) {
   // 1:
   // const result = {}
 
