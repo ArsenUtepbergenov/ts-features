@@ -1,11 +1,12 @@
 import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
+import globals from 'globals'
 
 export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['*.dev.js'],
+    ignores: ['node_modules/', 'dist/', 'build/'],
   },
   {
     languageOptions: {
@@ -13,21 +14,21 @@ export default [
       parserOptions: {
         project: true,
       },
-      ecmaVersion: 12,
+      ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
-        es2022: true,
-        browser: true,
-        node: true,
+        ...globals.browser,
+        ...globals.node,
+        ...globals.es2025,
       },
     },
     plugins: { '@typescript-eslint': tseslint.plugin },
-    files: ['src/*.ts'],
+    files: ['src/**/*.ts'],
     rules: {
-      '@typescript-eslint/no-unused-vars': 'off',
-      '@typescript-eslint/consistent-type-definitions': 'off',
-      'no-debugger': 0,
-      '@typescript-eslint/no-var-requires': 0,
+      'no-debugger': 'off',
+      'no-extra-boolean-cast': 'off',
+      //
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
 ]

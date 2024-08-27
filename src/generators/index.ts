@@ -1,4 +1,4 @@
-const iterator = {
+export const iterator = {
   [Symbol.iterator](n = 10) {
     let i = 0
     return {
