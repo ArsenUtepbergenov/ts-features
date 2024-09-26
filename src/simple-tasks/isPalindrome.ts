@@ -12,3 +12,22 @@ export default function isPalindrome(s: string): boolean {
 
   return parsed === reversed
 }
+
+/*
+function isPalindrome(s: string): boolean {
+  const anS = s.replace(/[^a-z0-9]/gi, '').toLocaleLowerCase()
+
+  if (anS === '') return true
+
+  let b = 0,
+    e = anS.length - 1
+
+  while (b < e) {
+    if (anS[b] !== anS[e]) return false
+    b++
+    e--
+  }
+
+  return true
+}
+*/
