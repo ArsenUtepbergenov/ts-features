@@ -13,7 +13,6 @@ export default function generateParenthesis(n: number): string[] {
       return
     }
 
-    debugger
     if (l > 0) generate(l - 1, r, s + '(')
     if (r > 0) generate(l, r - 1, s + ')')
   }

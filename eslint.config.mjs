@@ -6,7 +6,7 @@ export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['node_modules/', 'dist/', 'build/'],
+    ignores: ['node_modules/', 'dist/', 'build/', 'client/', 'server/'],
   },
   {
     languageOptions: {
@@ -27,6 +27,7 @@ export default [
     rules: {
       'no-debugger': 'off',
       'no-extra-boolean-cast': 'off',
+      'no-undef': 'off',
       //
       '@typescript-eslint/no-unused-vars': 'warn',
     },
